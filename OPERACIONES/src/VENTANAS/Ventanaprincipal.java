@@ -4,6 +4,9 @@ package VENTANAS;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+import javax.swing.JOptionPane;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  *
@@ -59,7 +62,40 @@ public class Ventanaprincipal extends javax.swing.JFrame {
         btnRestar.setText("Restar");
         btnRestar.setBounds(150,120,100,20);
         this.getContentPane().add(btnRestar);
+        
+        btnSumar.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                btnSumarActionPerformed(evt);
+            }
+        });
+        
+        
+        btnRestar.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent evt) {
+                btnRestarActionPerformed(evt);
+            }
+        });
+
       }
+    
+      public void btnSumarActionPerformed(ActionEvent evt){
+          double a,b,s;
+          
+          a=Double.parseDouble(txtNum1.getText());
+          b=Double.parseDouble(txtNum2.getText());
+          s=a+b;
+          JOptionPane.showMessageDialog(null,"La suma es "+s);
+      }
+      
+      public void btnRestarActionPerformed(ActionEvent evt) {
+        double a,b,r;
+        
+        a=Double.parseDouble(txtNum1.getText());
+        b=Double.parseDouble(txtNum2.getText());
+        r=a-b;
+        JOptionPane.showMessageDialog(null,"La resta es "+r);
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
